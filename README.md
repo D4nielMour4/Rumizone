@@ -11,22 +11,16 @@ def janela_login():
     nova_janela = customtkinter.CTk()
     nova_janela.geometry("800x550")
     nova_janela.title("Sessão do Usuário")
-
     texto = customtkinter.CTkLabel(nova_janela, text="Fazer login")
     texto.pack(padx=10, pady=10)
-
     email = customtkinter.CTkEntry(nova_janela, placeholder_text="Seu e-mail")
     email.pack(padx=10, pady=10)
-
     senha = customtkinter.CTkEntry(nova_janela, placeholder_text="Digite sua senha", show="*")
     senha.pack(padx=10, pady=10)
-
     checkbox = customtkinter.CTkCheckBox(nova_janela, text="Lembrar login")
     checkbox.pack(padx=10, pady=10)
-
     botao = customtkinter.CTkButton(nova_janela, text="Login", command=clique)
     botao.pack(padx=10, pady=10)
-
     nova_janela.mainloop()
     
 def janela_registro():
