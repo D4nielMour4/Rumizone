@@ -26,7 +26,7 @@ janela.geometry("1360x720")
 janela.resizable(False, False)
 janela.title("Rumizone")
 
-frame_inicio = Frame(janela)
+frame_inicio = customtkinter.CTkFrame(janela)
 frame_inicio.pack()
 
 espaco = customtkinter.CTkLabel(frame_inicio, text=" ")
