@@ -22,7 +22,7 @@ def janela_registro():
     frame_registro.pack()
 
 janela = customtkinter.CTk()
-janela.geometry("900x650")
+janela.geometry("1360x720")
 janela.resizable(False, False)
 janela.title("Rumizone")
 
