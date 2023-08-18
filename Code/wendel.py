@@ -26,7 +26,7 @@ janela.geometry("1360x720")
 janela.resizable(False, False)
 janela.title("Rumizone")
 
-frame_inicio = Frame(janela)
+frame_inicio = customtkinter.CTkFrame(janela)
 frame_inicio.pack()
 
 espaco = customtkinter.CTkLabel(frame_inicio, text=" ")
@@ -47,8 +47,8 @@ botao3.pack(padx=10, pady=10)
 botao2 = customtkinter.CTkButton(frame_inicio, text="Registre-se", command=janela_registro)
 botao2.pack(padx=10, pady=10)
 
-frame_login = Frame(janela)
-frame_registro = Frame(janela)
+frame_login = customtkinter.CTkFrame(janela)
+frame_registro = customtkinter.CTkFrame(janela)
 
 texto_login = customtkinter.CTkLabel(frame_login, text="Fazer login")
 texto_login.pack(padx=10, pady=10)
