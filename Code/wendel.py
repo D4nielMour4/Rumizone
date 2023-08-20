@@ -26,6 +26,9 @@ tela = customtkinter.CTk(fg_color="#CFD8DC")
 tela.geometry("1360x720")
 tela.resizable(False, False)
 tela.title("Rumizone")
+=======
+frame_inicio = customtkinter.CTkFrame(janela)
+frame_inicio.pack()
 
 frame_inicio = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
 
@@ -44,9 +47,14 @@ botao1.place(x=480, y=350)
 botao2 = customtkinter.CTkButton(tela, text="Registre-se", font=("Helvetica",40), command=janela_registro, fg_color="#8690AF",text_color="white", width=370, height=70)
 botao2.place(x=480, y=440)
 
+
 # Frames
 frame_login = customtkinter.CTkFrame(master= tela, fg_color="#CFD8DC")
 frame_registro = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
+=======
+frame_login = customtkinter.CTkFrame(janela)
+frame_registro = customtkinter.CTkFrame(janela)
+
 
 
 #Frame/Tela de login
