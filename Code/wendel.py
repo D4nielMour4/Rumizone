@@ -25,7 +25,7 @@ def janela_registro():
 tela = customtkinter.CTk(fg_color="#CFD8DC")
 tela.geometry("1360x720")
 tela.resizable(False, False)
-tela.title("Rumizone")
+tela.title("Rumizone")  
 
 frame_inicio = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
 
