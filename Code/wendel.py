@@ -74,5 +74,3 @@ botao_voltar_registro = customtkinter.CTkButton(frame_registro, text="Voltar",fg
 botao_voltar_registro.place(x=500, y=400)
 
 tela.mainloop()
-
-
