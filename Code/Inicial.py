@@ -4,7 +4,6 @@ from tkinter import *
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
 
-
 def clique():
     print("Fazer login")
 
@@ -14,7 +13,7 @@ def voltar_para_inicio(frame_atual):
 
 def janela_login():
     frame_inicio.pack_forget()
-    frame_registro.pack_forget() 
+    frame_registro.pack_forget()
     frame_login.pack(fill="both", expand=True)# Fazer com que o frame ocupe a tela inteira
 
 def janela_registro():
@@ -26,9 +25,6 @@ tela = customtkinter.CTk(fg_color="#CFD8DC")
 tela.geometry("1360x720")
 tela.resizable(False, False)
 tela.title("Rumizone")
-=======
-frame_inicio = customtkinter.CTkFrame(janela)
-frame_inicio.pack()
 
 frame_inicio = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
 
@@ -47,15 +43,9 @@ botao1.place(x=480, y=350)
 botao2 = customtkinter.CTkButton(tela, text="Registre-se", font=("Helvetica",40), command=janela_registro, fg_color="#8690AF",text_color="white", width=370, height=70)
 botao2.place(x=480, y=440)
 
-
 # Frames
 frame_login = customtkinter.CTkFrame(master= tela, fg_color="#CFD8DC")
 frame_registro = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
-=======
-frame_login = customtkinter.CTkFrame(janela)
-frame_registro = customtkinter.CTkFrame(janela)
-
-
 
 #Frame/Tela de login
 texto_login = customtkinter.CTkLabel(frame_login, text="Fazer login", text_color="#607D8B", font=("Helvetica", 70))
