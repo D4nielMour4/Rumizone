@@ -2,7 +2,8 @@ import customtkinter
 from tkinter import *
 
 customtkinter.set_appearance_mode("dark")
-customtkinter.set_default_color_theme("green")
+customtkinter.set_default_color_theme("dark-blue")
+
 
 def clique():
     print("Fazer login")
@@ -14,70 +15,70 @@ def voltar_para_inicio(frame_atual):
 def janela_login():
     frame_inicio.pack_forget()
     frame_registro.pack_forget() 
-    frame_login.pack()
+    frame_login.pack(fill="both", expand=True)# Fazer com que o frame ocupe a tela inteira
 
 def janela_registro():
     frame_inicio.pack_forget()
     frame_login.pack_forget()
-    frame_registro.pack()
+    frame_registro.pack(fill="both", expand=True)
 
-janela = customtkinter.CTk()
-janela.geometry("1360x720")
-janela.resizable(False, False)
-janela.title("Rumizone")
-
+tela = customtkinter.CTk(fg_color="#CFD8DC")
+tela.geometry("1360x720")
+tela.resizable(False, False)
+tela.title("Rumizone")
+=======
 frame_inicio = customtkinter.CTkFrame(janela)
 frame_inicio.pack()
 
-espaco = customtkinter.CTkLabel(frame_inicio, text=" ")
-espaco.pack(padx=10, pady=10)
-espaco.pack(padx=10, pady=10)
-espaco1 = customtkinter.CTkLabel(frame_inicio, text=" ")
-espaco1.pack(padx=10, pady=10)
-espaco2 = customtkinter.CTkLabel(frame_inicio, text=" ")
-espaco2.pack(padx=10, pady=10)
-texto = customtkinter.CTkLabel(frame_inicio, text="Rumizone", text_color="#2ca474", font=("Helvetica", 36))
-texto.pack(padx=10, pady=10)
-texto1 = customtkinter.CTkLabel(frame_inicio, text="Monitoramento e comportamento animal", font=("Helvetica", 14))
-texto1.pack(padx=5, pady=5)
+frame_inicio = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
 
-botao3 = customtkinter.CTkButton(frame_inicio, text="Login", command=janela_login)
-botao3.pack(padx=10, pady=10)
+frame_inicio.pack()
 
-botao2 = customtkinter.CTkButton(frame_inicio, text="Registre-se", command=janela_registro)
-botao2.pack(padx=10, pady=10)
+# Tela inicial do código
+#img = PhotoImage(file="iconevaca.png") imagem não quer ir nem fudendo(dps resolvo)
+#label_img = customtkinter.CTkLabel(tela, image=img)
+#label_img.place(x= 480, y=100)
+texto = customtkinter.CTkLabel(tela, text="Rumizone", text_color="#607D8B", font=("Robot", 49))
+texto.place(x=560, y=250)
+texto1 = customtkinter.CTkLabel(tela, text="Monitoramento e comportamento animal", text_color="#607D8B", font=("Helvetica", 20))
+texto1.place(x=480, y=310)
+botao1 = customtkinter.CTkButton(tela, text="Login", font=("Helvetica",40), command=janela_login, fg_color="#8690AF",text_color="white", width=370, height=70)
+botao1.place(x=480, y=350)
+botao2 = customtkinter.CTkButton(tela, text="Registre-se", font=("Helvetica",40), command=janela_registro, fg_color="#8690AF",text_color="white", width=370, height=70)
+botao2.place(x=480, y=440)
 
+
+# Frames
+frame_login = customtkinter.CTkFrame(master= tela, fg_color="#CFD8DC")
+frame_registro = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
+=======
 frame_login = customtkinter.CTkFrame(janela)
 frame_registro = customtkinter.CTkFrame(janela)
 
-texto_login = customtkinter.CTkLabel(frame_login, text="Fazer login")
-texto_login.pack(padx=10, pady=10)
-email = customtkinter.CTkEntry(frame_login, placeholder_text="Seu e-mail")
-email.pack(padx=10, pady=10)
-senha = customtkinter.CTkEntry(frame_login, placeholder_text="Digite sua senha", show="*")
-senha.pack(padx=10, pady=10)
-checkbox = customtkinter.CTkCheckBox(frame_login, text="Lembrar login")
-checkbox.pack(padx=10, pady=10)
-botao_login = customtkinter.CTkButton(frame_login, text="Login", command=clique)
-botao_login.pack(padx=10, pady=10)
-botao_voltar_login = customtkinter.CTkButton(frame_login, text="Voltar", command=lambda: voltar_para_inicio(frame_login))
-botao_voltar_login.pack(padx=10, pady=10)
 
-texto_registro = customtkinter.CTkLabel(frame_registro, text="Fazer registro")
-texto_registro.pack(padx=10, pady=10)
-email_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Digite seu e-mail")
-email_registro.pack(padx=10, pady=10)
-confirmacao_senha = customtkinter.CTkEntry(frame_registro, placeholder_text="Digite sua senha de novo", show="*")
-confirmacao_senha.pack(padx=10, pady=10)
-senha_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Digite sua senha", show="*")
-senha_registro.pack(padx=10, pady=10)
-checkbox_registro = customtkinter.CTkCheckBox(frame_registro, text="Lembrar registro")
-checkbox_registro.pack(padx=10, pady=10)
-botao_registro = customtkinter.CTkButton(frame_registro, text="Registrar", command=clique)
-botao_registro.pack(padx=10, pady=10)
-botao_voltar_registro = customtkinter.CTkButton(frame_registro, text="Voltar", command=lambda: voltar_para_inicio(frame_registro))
-botao_voltar_registro.pack(padx=10, pady=10)
 
-janela.mainloop()
+#Frame/Tela de login
+texto_login = customtkinter.CTkLabel(frame_login, text="Fazer login", text_color="#607D8B", font=("Helvetica", 70))
+texto_login.place(x=510, y=180)
+email = customtkinter.CTkEntry(frame_login, placeholder_text="Digite seu usuário", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20))
+email.place(x=500, y=280)
+senha = customtkinter.CTkEntry(frame_login, placeholder_text="Digite sua senha", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20), show="*")
+senha.place(x=500, y=330)
+botao_login = customtkinter.CTkButton(frame_login, text="Entrar", fg_color="#8690AF", text_color="white", command=clique)
+botao_login.place(x=730, y=400)
+botao_voltar_login = customtkinter.CTkButton(frame_login, text="Voltar",fg_color="#8690AF", command=lambda: voltar_para_inicio(frame_login))
+botao_voltar_login.place(x=500, y=400)#Botão com função de voltar pra tela inicial
 
-# Resolver problema da barra branca no meio de todas as telas
+#Frame/Tela de registro
+texto_registro = customtkinter.CTkLabel(frame_registro, text="Registrar-se", text_color="#607D8B", font=("Helvetica", 70))
+texto_registro.place(x=491, y=180)
+email_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Digite seu novo usuário", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20))
+email_registro.place(x=500, y=280)
+senha_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Digite sua senha", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20), show="*")
+senha_registro.place(x=500, y=330)
+botao_registro = customtkinter.CTkButton(frame_registro, text="Registrar", fg_color="#8690AF", text_color="white", command=clique)
+botao_registro.place(x=730, y=400)
+botao_voltar_registro = customtkinter.CTkButton(frame_registro, text="Voltar",fg_color="#8690AF", command=lambda: voltar_para_inicio(frame_registro))
+botao_voltar_registro.place(x=500, y=400)
+
+tela.mainloop()
