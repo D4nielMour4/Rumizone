@@ -1,5 +1,6 @@
 import customtkinter
 from tkinter import *
+from  PIL import Image
 
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
@@ -31,10 +32,13 @@ frame_inicio = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
 
 frame_inicio.pack()
 
-# Tela inicial do código
-#img = PhotoImage(file="iconevaca.png") imagem não quer ir nem fudendo(dps resolvo)
-#label_img = customtkinter.CTkLabel(tela, image=img)
-#label_img.place(x= 480, y=100)
+#Frame/Tela inicial
+
+iconevaca = customtkinter.CTkImage(light_image=Image.open(r"C:\Users\wende\OneDrive\Documentos\GitHub\Rumizone\Code\fodase.png"),
+                                   dark_image=Image.open(r"C:\Users\wende\OneDrive\Documentos\GitHub\Rumizone\Code\fodase.png"),
+                                   size=(250,320))
+Label = customtkinter.CTkLabel(master=tela, text="", image=iconevaca)
+Label.place(x=530, y=50)
 texto = customtkinter.CTkLabel(tela, text="Rumizone", text_color="#607D8B", font=("Robot", 49))
 texto.place(x=560, y=250)
 texto1 = customtkinter.CTkLabel(tela, text="Monitoramento e comportamento animal", text_color="#607D8B", font=("Helvetica", 20))
@@ -68,7 +72,7 @@ email_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Digite
 email_registro.place(x=500, y=280)
 senha_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Digite sua senha", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20), show="*")
 senha_registro.place(x=500, y=330)
-botao_registro = customtkinter.CTkButton(frame_registro, text="Registrar", fg_color="#8690AF", text_color="white", command=clique)
+botao_registro = customtkinter.CTkButton(frame_registro, text="Criar conta", fg_color="#8690AF", text_color="white", command=clique)
 botao_registro.place(x=730, y=400)
 botao_voltar_registro = customtkinter.CTkButton(frame_registro, text="Voltar",fg_color="#8690AF", command=lambda: voltar_para_inicio(frame_registro))
 botao_voltar_registro.place(x=500, y=400)
