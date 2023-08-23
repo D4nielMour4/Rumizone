@@ -134,22 +134,35 @@ def producao_button():
 texto_info = customtkinter.CTkLabel(frame_info_vaca, text="", text_color="black", font=("Helvetica", 11), width=292, height=401, fg_color="#FFDA8F", corner_radius=100)
 texto_info.place(x=10, y=275)
 
+player= customtkinter.CTkImage(light_image=Image.open(r"imagens\player.png"),
+                dark_image=Image.open(r"imagens\player.png"),
+                size=(205, 205))
+carne= customtkinter.CTkImage(light_image=Image.open(r"imagens\carne.png"),
+                dark_image=Image.open(r"imagens\carne.png"),
+                size=(80, 70))
+leite= customtkinter.CTkImage(light_image=Image.open(r"imagens\caixa de leite.png"),
+                dark_image=Image.open(r"imagens\caixa de leite.png"),
+                size=(75, 85))
+voltar= customtkinter.CTkImage(light_image=Image.open(r"imagens\voltar.png"),
+                dark_image=Image.open(r"imagens\voltar.png"),
+                size=(20, 20))
 img_vaca = customtkinter.CTkLabel(frame_info_vaca, width=250, height=250, fg_color="black", corner_radius=200, bg_color="#CFD8DC", text="")
 img_vaca.place(x=20, y=10)
 
-texto_nome = customtkinter.CTkLabel(frame_info_vaca, text="-Creusa-\n #3321", text_color="black", font=("Helvetica", 24), width=300, height=100, fg_color="#8690AF", corner_radius=100)
+texto_nome = customtkinter.CTkButton(frame_info_vaca, text="-Creusa-\n #3321", text_color="black", font=("Times", 24), width=400, height=100, fg_color="#8690AF", corner_radius=100, border_color="black", border_width=3, hover=DISABLED)
 texto_nome.place(x=330, y=20)
 
-img_tipo1 = customtkinter.CTkLabel(frame_info_vaca, width=100, height=100, fg_color="white", corner_radius=100, text="")
-img_tipo1.place(x=800, y=20)
+img_leite = customtkinter.CTkLabel(frame_info_vaca,image=leite, text="")
+img_leite.place(x=800, y=25)
 
-img_tipo2 = customtkinter.CTkLabel(frame_info_vaca, width=100, height=100, fg_color="white", corner_radius=100, text="")
-img_tipo2.place(x=1000, y=20)
+img_carne = customtkinter.CTkLabel(frame_info_vaca,image=carne ,text="")
+img_carne.place(x=900, y=35)
 
-video = customtkinter.CTkLabel(frame_info_vaca, width=900, height=500, fg_color="#FF9EB1", corner_radius=100, text="")
-video.place(x=330, y=175)
+video_frame = customtkinter.CTkFrame(frame_info_vaca, width=900,border_width=3,border_color="black", height=500, fg_color="#FF9EB1", corner_radius=100)
+video_frame.place(x=330, y=175)
+button_player= customtkinter.CTkButton(video_frame,image=player, text=None, fg_color="#FF9EB1",hover=DISABLED).place(x=350,y=150,)
 
-button_back = customtkinter.CTkButton(frame_info_vaca, text="voltar", fg_color="#FF9EB1", command=clique, border_width=1, corner_radius=100, width=50, height=50)
+button_back = customtkinter.CTkButton(frame_info_vaca,border_width=3,border_color="black", text=None, fg_color="#FF9EB1", command=clique, corner_radius=100, width=50, height=50,image=voltar)
 button_back.place(x=1250, y=650)
 
 button_curral = customtkinter.CTkButton(texto_info, text="Curral", fg_color="#FF9EB1", command=curral_button, border_width=1, corner_radius=100, width=50, height=50)
