@@ -42,21 +42,21 @@ frame_inicio.pack()
 
 iconevaca = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
                                    dark_image=Image.open(r"imagens\rumizone icone.png"),
-                                   size=(250,320))
+                                   size=(300,320))
 label_icone = customtkinter.CTkLabel(master=tela, text="", image=iconevaca)
-label_icone.place(x=530, y=50)
+label_icone.place(x=510, y=30)
 
 texto = customtkinter.CTkLabel(tela, text="Rumizone", text_color="#607D8B", font=("Robot", 49))
-texto.place(x=560, y=250)
+texto.place(x=560, y=350)
 
-texto1 = customtkinter.CTkLabel(tela, text="Monitoramento e comportamento animal", text_color="#607D8B", font=("Helvetica", 20))
-texto1.place(x=480, y=310)
+texto1 = customtkinter.CTkLabel(tela,bg_color="transparent", text="Monitoramento e comportamento animal", text_color="#607D8B", font=("Helvetica", 20))
+texto1.place(x=480, y=410)
 
 botao1 = customtkinter.CTkButton(tela, text="Login", font=("Helvetica",40), command=janela_login, fg_color="#8690AF",text_color="white", width=370, height=70)
-botao1.place(x=480, y=350)
+botao1.place(x=480, y=470)
 
 botao2 = customtkinter.CTkButton(tela, text="Registre-se", font=("Helvetica",40), command=janela_registro, fg_color="#8690AF",text_color="white", width=370, height=70)
-botao2.place(x=480, y=440)
+botao2.place(x=480, y=570)
 
 frame_login = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
 frame_registro = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
