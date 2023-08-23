@@ -1,9 +1,9 @@
 from customtkinter import *
 from PIL import Image
+from tkinter import filedialog 
 
 
-
-cadastro_vacas= CTk(fg_color="#CFD8DC") #nome da tela
+cadastro_vacas= CTk(fg_color="#CFD8DC") #nome da tela 
 cadastro_vacas.geometry("1360x720") #tamanho padrão do projeto
 cadastro_vacas.resizable(False,False) #não permite o usuário redimensionar a tela
 cadastro_vacas.title("Rumizone") #título do projeto 
@@ -28,7 +28,30 @@ feto= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumiz
 genders= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\genders.png"),
                 dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\genders.png"),
                 size=(60, 50))
+voltar= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\botao voltar.png"),
+                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\botao voltar.png"),
+                size=(25, 25))
 
+botao_voltar= CTkButton(cadastro_vacas,
+                        text= None,
+                        fg_color="#FF9EB1",
+                        width=80,
+                        height=60,
+                        corner_radius=45,
+                        border_width=3,
+                        border_color="black",
+                        image=voltar)
+botao_voltar.place(x=60, y=620)
+
+imagem_vaca = CTkButton(cadastro_vacas,
+                     text="add\nimage",
+                    width=150, 
+                    height=150, 
+                    fg_color="#607D8B", 
+                    corner_radius=220,
+                    border_color="black",
+                     border_width=3 )
+imagem_vaca.place(x=306, y=35)
 # 3 checkbox pro cadastro das vaquinha
 checkbox_leite= CTkCheckBox(cadastro_vacas,text=None,
                             checkbox_height=30,
