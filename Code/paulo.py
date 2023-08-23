@@ -1,70 +1,111 @@
-import tkinter as tk
-from tkinter import ttk
+import customtkinter
+from tkinter import *
+from PIL import Image, ImageTk
+from tkinter import filedialog
 
-def cadastrar_funcionario():
-    nome = entry_nome.get()
-    sexo = combo_sexo.get()
-    idade = entry_idade.get()
-    cargo = entry_cargo.get()
-    email = entry_email.get()
-    celular = entry_celular.get()
-    observacoes = text_observacoes.get("1.0", "end-1c")
-    
+customtkinter.set_appearance_mode("dark")
+customtkinter.set_default_color_theme("dark-blue")
+
+def clique():
+    print("Fazer login")
+
+def voltar_para_inicio(frame_atual):
+    frame_atual.pack_forget()
+    frame_inicio.pack()
+
+def janela_login():
+    frame_inicio.pack_forget()
+    frame_registro.pack_forget() 
+    frame_login.pack(fill="both", expand=True)
+
+def janela_registro():
+    frame_inicio.pack_forget()
+    frame_login.pack_forget()
+    frame_registro.pack(fill="both", expand=True)
+
+def escolher_imagem():
+    filepath = filedialog.askopenfilename(filetypes=[("Image files", "*.png *.jpg *.jpeg *.gif")])
+    if filepath:
+        imagem = Image.open(filepath)
+        imagem.thumbnail((292, 480))  # Redimensionar a imagem para o tamanho desejado
+        imagem = ImageTk.PhotoImage(imagem)
+        label_imagem.configure(image=imagem)
+        label_imagem.image = imagem
+
+tela = customtkinter.CTk(fg_color="#CFD8DC")
+tela.geometry("1360x720")
+tela.resizable(False, False)
+tela.title("Rumizone")  
+
+frame_inicio = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
+frame_inicio.pack()
+
+iconevaca = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
+                                   dark_image=Image.open(r"imagens\rumizone icone.png"),
+                                   size=(250,320))
+label_icone = customtkinter.CTkLabel(master=tela, text="", image=iconevaca)
+label_icone.place(x=530, y=50)
+
+texto = customtkinter.CTkLabel(tela, text="Rumizone", text_color="#607D8B", font=("Robot", 49))
+texto.place(x=560, y=250)
+
+texto1 = customtkinter.CTkLabel(tela, text="Monitoramento e comportamento animal", text_color="#607D8B", font=("Helvetica", 20))
+texto1.place(x=480, y=310)
+
+botao1 = customtkinter.CTkButton(tela, text="Login", font=("Helvetica",40), command=janela_login, fg_color="#8690AF",text_color="white", width=370, height=70)
+botao1.place(x=480, y=350)
+
+botao2 = customtkinter.CTkButton(tela, text="Registre-se", font=("Helvetica",40), command=janela_registro, fg_color="#8690AF",text_color="white", width=370, height=70)
+botao2.place(x=480, y=440)
+
+frame_login = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
+frame_registro = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
 
 
-    # Exemplo de exibição dos dados, substituir pelo backend.
-    print("Nome:", nome)
-    print("Sexo:", sexo)
-    print("Idade:", idade)
-    print("Cargo:", cargo)
-    print("Email:", email)
-    print("Celular:", celular)
-    print("Observações:", observacoes)
+#Frame/Tela de login
+texto_login = customtkinter.CTkLabel(frame_login, text="Fazer login", text_color="#607D8B", font=("Helvetica", 70))
+texto_login.place(x=510, y=180)
+email = customtkinter.CTkEntry(frame_login, placeholder_text="Digite seu usuário", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20))
+email.place(x=500, y=280)
+senha = customtkinter.CTkEntry(frame_login, placeholder_text="Digite sua senha", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20), show="*")
+senha.place(x=500, y=330)
+botao_login = customtkinter.CTkButton(frame_login, text="Entrar", fg_color="#8690AF", text_color="white", command=clique)
+botao_login.place(x=730, y=400)
+botao_voltar_login = customtkinter.CTkButton(frame_login, text="Voltar",fg_color="#8690AF", command=lambda: voltar_para_inicio(frame_login))
+botao_voltar_login.place(x=500, y=400)#Botão com função de voltar pra tela inicial
 
-app = tk.Tk()
-app.title("Cadastro de Funcionário")
+#Frame/Tela de registro
+botao_escolher_imagem = customtkinter.CTkButton(frame_registro, text="Escolher foto de perfil", command=escolher_imagem,
+                                                 fg_color="#8690AF", text_color="white")
+botao_escolher_imagem.place(x=95, y=260)
 
-# Labels
-label_nome = tk.Label(app, text="Nome:")
-label_sexo = tk.Label(app, text="Sexo:")
-label_idade = tk.Label(app, text="Idade:")
-label_cargo = tk.Label(app, text="Cargo:")
-label_email = tk.Label(app, text="Email:")
-label_celular = tk.Label(app, text="Celular:")
-label_observacoes = tk.Label(app, text="Observações:")
-text_observacoes = tk.Text(app, height=5, width=30)
+label_imagem = customtkinter.CTkLabel(frame_registro)
+label_imagem.place(x=30, y=25)
 
-# Entradas de texto
-entry_nome = tk.Entry(app)
-entry_idade = tk.Entry(app)
-entry_cargo = tk.Entry(app)
-entry_email = tk.Entry(app)
-entry_celular = tk.Entry(app)
+nomefuncionario = customtkinter.CTkEntry(frame_registro, placeholder_text="Digite seu nome",
+                                         text_color="black", fg_color="#FFDA8F", width=280, height=60, font=("Helvetica", 20))
+nomefuncionario.place(x=20, y=290)
 
-# Combobox para seleção do sexo
-combo_sexo = ttk.Combobox(app, values=["Masculino", "Feminino", "Outro"])
-combo_sexo.set("Selecione")
+nascimentofuncionario = customtkinter.CTkEntry(frame_registro, placeholder_text="Data de nasciment.",
+                                               text_color="black", fg_color="#8690AF", width=280, height=60, font=("Helvetica", 20))
+nascimentofuncionario.place(x=20, y=360)
 
-# Botão de cadastro
-botao_cadastrar = tk.Button(app, text="Cadastrar", command=cadastrar_funcionario)
+emailfuncionario = customtkinter.CTkEntry(frame_registro, placeholder_text="Diga seu e-mail",
+                                           text_color="black", fg_color="#FF9EB1", width=280, height=60, font=("Helvetica", 20))
+emailfuncionario.place(x=20, y=430)
 
-# Posicionamento dos widgets na janela
-label_nome.grid(row=0, column=0)
-label_sexo.grid(row=1, column=0)
-label_idade.grid(row=2, column=0)
-label_cargo.grid(row=3, column=0)
-label_email.grid(row=4, column=0)
-label_celular.grid(row=5, column=0)
-label_observacoes.grid(row=6, column=0)
-text_observacoes.grid(row=6, column=1)
+telefonefuncionario = customtkinter.CTkEntry(frame_registro, placeholder_text="Diga número de celular.",
+                                             text_color="black", fg_color="#8690AF", width=280, height=60, font=("Helvetica", 20))
+telefonefuncionario.place(x=20, y=500)
 
-entry_nome.grid(row=0, column=1)
-combo_sexo.grid(row=1, column=1)
-entry_idade.grid(row=2, column=1)
-entry_cargo.grid(row=3, column=1)
-entry_email.grid(row=4, column=1)
-entry_celular.grid(row=5, column=1)
+botao_registro = customtkinter.CTkButton(frame_registro, text="Criar conta", fg_color="#8690AF", text_color="white", command=clique)
+botao_registro.place(x=170, y=570)
 
-botao_cadastrar.grid(row=7, columnspan=2)
+botao_voltar_login1 = customtkinter.CTkButton(frame_registro, text="Voltar",fg_color="#8690AF", command=lambda: voltar_para_inicio(frame_registro))
+botao_voltar_login1.place(x=20, y=570)#Botão com função de voltar pra tela inicial
 
-app.mainloop()
+
+
+
+
+tela.mainloop()
