@@ -39,7 +39,6 @@ botao1= CTkButton(janela_inicial,
                   border_width=3,
                   border_color="black",
                   image= vaquinha)
-botao1.pack(padx=15, pady=10)
 botao1.place(x=139, y=400)
 
 botao2= CTkButton(janela_inicial, 
@@ -53,7 +52,6 @@ botao2= CTkButton(janela_inicial,
                   border_width=3,
                   border_color="black",
                   image= cerca)
-botao2.pack(padx=10, pady=10)
 botao2.place(x=575, y=400)
 
 botao3= CTkButton(janela_inicial, 
@@ -67,7 +65,6 @@ botao3= CTkButton(janela_inicial,
                   border_width=3,
                   border_color="black",
                   image= cerca)
-botao3.pack(padx=10, pady=10)
-botao3.place(x=1011, y=400)
+botao3.place(x=930, y=400)
 
 janela_inicial.mainloop()
