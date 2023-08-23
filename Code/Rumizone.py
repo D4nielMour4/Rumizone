@@ -26,7 +26,7 @@ img_cerca = customtkinter.CTkImage(light_image=Image.open(r"imagens\cerca do cur
                                     dark_image=Image.open(r"imagens\cerca do curral.png"),
                                     size=(60, 60))
 
-img_vaqueiro = customtkinter.CTkImage(light_image=Image.open(r"imagens\fazendeiro.png"),
+img_fazendeiro = customtkinter.CTkImage(light_image=Image.open(r"imagens\fazendeiro.png"),
                                     dark_image=Image.open(r"imagens\fazendeiro.png"),
                                     size=(150, 90))
 
@@ -141,7 +141,7 @@ botao_voltar_principal.place(x=60, y=650)
 iconevaca_principal = customtkinter.CTkLabel(master=frame_principal, text="", image=iconevaca)
 iconevaca_principal.place(x=530, y=0)
 
-botao_perfil_principal = customtkinter.CTkButton(frame_principal, text="", fg_color="#FFDA8F", text_color="black", command="", width=200, height=200)
+botao_perfil_principal = customtkinter.CTkButton(frame_principal, text="", fg_color="#FFDA8F", text_color="black", command="", width=200, height=200, image=img_fazendeiro)
 botao_perfil_principal.place(x=300, y=300)
 
 botao_curral_principal = customtkinter.CTkButton(frame_principal, text="", fg_color="#FF9EB1", text_color="black", command="", width=200, height=200, image=img_cerca)
