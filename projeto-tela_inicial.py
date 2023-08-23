@@ -7,21 +7,21 @@ janela_inicial.resizable(False,False) #não permite o usuário redimensionar a t
 janela_inicial.title("Rumizone") #título do projeto 
 
 #imagens em png do projeto (se nao funcionar encaixa o diretório do seu pc)
-voltar= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\botao voltar.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\botao voltar.png"),
+voltar= CTkImage(light_image=Image.open(r"imagens\botao voltar.png"),
+                dark_image=Image.open(r"imagens\botao voltar.png"),
                 size=(20, 20))
-vaquinha= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\vaquinha.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\vaquinha.png"),
+vaquinha= CTkImage(light_image=Image.open(r"imagens\vaquinha.png"),
+                dark_image=Image.open(r"imagens\vaquinha.png"),
                 size=(130, 70))
-cerca= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\cerca do curral.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\cerca do curral.png"),
+cerca= CTkImage(light_image=Image.open(r"imagens\cerca do curral.png"),
+                dark_image=Image.open(r"imagens\cerca do curral.png"),
                 size=(60, 60))
 
-icone= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\rumizone icone.png"), 
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\rumizone icone.png"),
+icone= CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"), 
+                dark_image=Image.open(r"imagens\rumizone icone.png"),
                 size=(300, 320))
-fazendeiro= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\fazendeiro.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\fazendeiro.png"),
+fazendeiro= CTkImage(light_image=Image.open(r"imagens\fazendeiro.png"),
+                dark_image=Image.open(r"imagens\fazendeiro.png"),
                 size=(60, 60))
 logo= CTkLabel(janela_inicial, text=None, 
                image=icone).pack()
