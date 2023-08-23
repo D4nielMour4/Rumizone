@@ -9,27 +9,27 @@ cadastro_vacas.resizable(False,False) #não permite o usuário redimensionar a t
 cadastro_vacas.title("Rumizone") #título do projeto 
 
 #barra= CTkFrame(cadastro_vacas, fg_color="#607D8B",width=250, height=720).place(x=0)
-icone= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\rumizone icone.png"), 
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\rumizone icone.png"),
+icone= CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"), 
+                dark_image=Image.open(r"imagens\rumizone icone.png"),
                 size=(200, 180))
 
-carne= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\carne.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\carne.png"),
+carne= CTkImage(light_image=Image.open(r"imagens\carne.png"),
+                dark_image=Image.open(r"imagens\carne.png"),
                 size=(60, 60))
 
-leite= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\caixa de leite.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\caixa de leite.png"),
+leite= CTkImage(light_image=Image.open(r"imagens\caixa de leite.png"),
+                dark_image=Image.open(r"imagens\caixa de leite.png"),
                 size=(60, 60))
 
-feto= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\feto.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\feto.png"),
+feto= CTkImage(light_image=Image.open(r"imagens\feto.png"),
+                dark_image=Image.open(r"imagens\feto.png"),
                 size=(60, 60))
 
-genders= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\genders.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\genders.png"),
+genders= CTkImage(light_image=Image.open(r"imagens\genders.png"),
+                dark_image=Image.open(r"imagens\genders.png"),
                 size=(60, 50))
-voltar= CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\botao voltar.png"),
-                dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\botao voltar.png"),
+voltar= CTkImage(light_image=Image.open(r"imagens\botao voltar.png"),
+                dark_image=Image.open(r"imagens\botao voltar.png"),
                 size=(25, 25))
 
 botao_voltar= CTkButton(cadastro_vacas,
@@ -129,15 +129,15 @@ idade= CTkEntry(cadastro_vacas,
                   border_color="black",
                   fg_color="#FF9EB1").place(x=305, y=395)
 peso= CTkEntry(cadastro_vacas,
-               corner_radius=45,
-                  placeholder_text="Peso - Kg:",
-                  placeholder_text_color="black",
-                  font=("Times", 30),
-                  width=270,
-                  height=75,
-                  border_width=3,
-                  border_color="black",
-                  fg_color="#8690AF").place(x=305, y=520)
+corner_radius=45,
+placeholder_text="Peso - Kg:",
+placeholder_text_color="black",
+font=("Times", 30),
+width=270,
+height=75,
+border_width=3,
+border_color="black",
+fg_color="#8690AF").place(x=305, y=520)
 produção= CTkEntry(cadastro_vacas,
                    corner_radius=45,
                   placeholder_text="Produção:",

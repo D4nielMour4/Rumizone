@@ -33,7 +33,29 @@ img_fazendeiro = customtkinter.CTkImage(light_image=Image.open(r"imagens\fazende
 icone_vaca_login = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
                                    dark_image=Image.open(r"imagens\rumizone icone.png"),
                                    size=(150,158))
+
+img_feto = customtkinter.CTkImage(light_image=Image.open(r"imagens\feto.png"),
+                                    dark_image=Image.open(r"imagens\feto.png"),
+                                    size=(60, 60))
+
+img_carne = customtkinter.CTkImage(light_image=Image.open(r"imagens\carne.png"),
+                                    dark_image=Image.open(r"imagens\carne.png"),
+                                    size=(60, 60))
+
+img_leite = customtkinter.CTkImage(light_image=Image.open(r"imagens\caixa de leite.png"),
+                                    dark_image=Image.open(r"imagens\caixa de leite.png"),
+                                    size=(60, 60))
+
+img_genders = customtkinter.CTkImage(light_image=Image.open(r"imagens\genders.png"),
+                                    dark_image=Image.open(r"imagens\genders.png"),
+                                    size=(60, 50))
+
+
 #Declarando Funcoes de Botao da tela Home
+
+img_vaca_cadastro = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"), 
+                dark_image=Image.open(r"imagens\rumizone icone.png"),
+                size=(200, 180))
 
 def janela_login():
     frame_home.pack_forget()
@@ -208,43 +230,13 @@ icon_vaca_principal.pack()
 titulo_rumizone_principal= customtkinter.CTkLabel(frame_principal,fg_color="transparent",text="RUMIZONE",font=("Times", 64),width=660,height=108,text_color="#607D8B")
 titulo_rumizone_principal.place(x=350,y=250)
 
-botao_cadastrar_animal= customtkinter.CTkButton(frame_principal, 
-                  text="cadastrar\n animal",
-                  text_color="black",
-                  font=("Times", 20),
-                  fg_color="#8690AF",
-                  width=300,
-                  height=180,
-                  corner_radius= 45,
-                  border_width=3,
-                  border_color="black",
-                  image= img_vaquinha)
+botao_cadastrar_animal= customtkinter.CTkButton(frame_principal,text="cadastrar\n animal",text_color="black",font=("Times", 20),fg_color="#8690AF",width=300,height=180,corner_radius= 45,border_width=3,border_color="black",image= img_vaquinha,command=botao_cadastrar_animal)
 botao_cadastrar_animal.place(x=140, y=400)
 
-botao_acessar_curral= customtkinter.CTkButton(frame_principal, 
-                  text="Entrar no curral",
-                  text_color="black",
-                  font=("Times", 20),
-                  fg_color="#FF9EB1",
-                  width=300,
-                  height=180,
-                  corner_radius= 45,
-                  border_width=3,
-                  border_color="black",
-                  image= img_cerca)
+botao_acessar_curral= customtkinter.CTkButton(frame_principal,text="Entrar no curral",text_color="black",font=("Times", 20),fg_color="#FF9EB1",width=300,height=180,corner_radius= 45,border_width=3,border_color="black",image= img_cerca)
 botao_acessar_curral.place(x=550, y=400)
 
-botao_acessar_perfil= customtkinter.CTkButton(frame_principal, 
-                  text="Ir para o Perfil",
-                  text_color="black",
-                  font=("Times", 20),
-                  fg_color="#FFDA8F",
-                  width=300,
-                  height=180,
-                  corner_radius= 45,
-                  border_width=3,
-                  border_color="black",
-                  image= img_fazendeiro)
+botao_acessar_perfil= customtkinter.CTkButton(frame_principal,text="Ir para o Perfil",text_color="black",font=("Times", 20),fg_color="#FFDA8F",width=300,height=180,corner_radius= 45,border_width=3,border_color="black",image= img_fazendeiro)
 botao_acessar_perfil.place(x=960, y=400)
 
 botao_voltar = customtkinter.CTkButton(frame_principal,
@@ -258,6 +250,80 @@ botao_voltar = customtkinter.CTkButton(frame_principal,
                         image=img_botao_voltar,
                         command=botao_voltar_principal)
 botao_voltar.place(x=60, y=620)
-
 #----------------------------------------------
+
+#Declarando Funcoes de Botao da tela cadastrar animal
+
+def botao_voltar_cadastrar_animal():
+    frame_cadastrar_animal.pack_forget()
+    frame_principal.pack(fill="both", expand=True)
+
+def botao_continuar_cadastrar_animal():
+    frame_cadastrar_animal.pack_forget()
+    frame_principal.pack(fill="both", expand=True)
+
+#Criando Frames Cadastrar Animal
+frame_cadastrar_animal = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
+
+img_vaca_cadastro_animal = customtkinter.CTkLabel(frame_cadastrar_animal, text="", image=img_vaca_cadastro)
+img_vaca_cadastro_animal.place(x=60, y=35)
+
+botao_voltar_cadastrar_animal = customtkinter.CTkButton(frame_cadastrar_animal,
+                        text= None,
+                        fg_color="#FF9EB1",
+                        width=80,
+                        height=60,
+                        corner_radius=45,
+                        border_width=3,
+                        border_color="black",
+                        image=img_botao_voltar,
+                        command=botao_voltar_cadastrar_animal)
+botao_voltar_cadastrar_animal.place(x=60, y=620)
+
+checkbox_leite = customtkinter.CTkCheckBox(frame_cadastrar_animal,text=None,checkbox_height=30,checkbox_width=30,fg_color="#B8EB7C",checkmark_color="black",border_width=3,border_color="black")
+checkbox_leite.place(x=1060,y=345)
+
+checkbox_abate= customtkinter.CTkCheckBox(frame_cadastrar_animal,text=None,checkbox_height=30,checkbox_width=30,fg_color="#B8EB7C",checkmark_color="black",border_width=3,border_color="black")
+checkbox_abate.place(x=1060, y=470)
+
+checkbox_gravidez = customtkinter.CTkCheckBox(frame_cadastrar_animal,text=None,checkbox_height=30,checkbox_width=30,fg_color="#B8EB7C",checkmark_color="black",border_width=3,border_color="black")
+checkbox_gravidez.place(x=1060,y=220)
+
+checkbox_femea = customtkinter.CTkCheckBox(frame_cadastrar_animal,text=None,checkbox_height=30,checkbox_width=30,fg_color="#FF9EB1",checkmark_color="black",border_width=3,border_color="black")
+
+checkbox_macho = customtkinter.CTkCheckBox(frame_cadastrar_animal,text=None,checkbox_height=30,checkbox_width=30,fg_color="#00BCD4",checkmark_color="black",border_width=3,border_color="black")
+
+img_feto_cadastro_animal = customtkinter.CTkLabel(frame_cadastrar_animal, text="", image=img_feto)
+img_feto_cadastro_animal.place(x=970, y=220)
+
+img_leite_cadastro_animal = customtkinter.CTkLabel(frame_cadastrar_animal, text="", image=img_leite)
+img_leite_cadastro_animal.place(x=970, y=345)
+
+img_carne_cadastro_animal = customtkinter.CTkLabel(frame_cadastrar_animal, text="", image=img_carne)
+img_carne_cadastro_animal.place(x=970, y=470)
+
+img_sexo = customtkinter.CTkLabel(frame_cadastrar_animal, text="", image=img_genders)
+img_sexo.place(x=515, y=130)
+
+entrada_pelagem_cadastro_animal = customtkinter.CTkEntry(frame_cadastrar_animal,corner_radius=45,placeholder_text="Pelagem:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#8690AF").place(x=305,y=265)
+
+entrada_idade_cadastro_animal = customtkinter.CTkEntry(frame_cadastrar_animal,corner_radius=45,placeholder_text="Idade:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#FF9EB1").place(x=305, y=395)
+
+entrada_imagem_vaca_cadastro_animal = customtkinter.CTkButton(frame_cadastrar_animal,text="add\nimage",width=150, height=150, fg_color="#607D8B", corner_radius=220,border_color="black",border_width=3 )
+entrada_imagem_vaca_cadastro_animal.place(x=306, y=35)
+
+entrada_peso_cadastro_animal = customtkinter.CTkEntry(frame_cadastrar_animal,corner_radius=45,placeholder_text="Peso - Kg:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#8690AF").place(x=305, y=520)
+
+entrada_produção_cadastro_animal = customtkinter.CTkEntry(frame_cadastrar_animal,corner_radius=45,placeholder_text="Produção:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#FFDA8F").place(x=645, y=265)
+
+entrada_nome_cadastro_animal = customtkinter.CTkEntry(frame_cadastrar_animal,corner_radius=45,placeholder_text="Nome:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#FFDA8F").place(x=505, y=40)
+
+entrada_cod_vaca_cadastro_animal = customtkinter.CTkEntry(frame_cadastrar_animal,corner_radius=45,placeholder_text="#Cód:",placeholder_text_color="black",font=("Times", 18),width=115,height=75,border_width=3,border_color="black",fg_color="#FF9EB1").place(x=805,y=40)
+
+entrada_comentarios_cadastro_animal = customtkinter.CTkTextbox(frame_cadastrar_animal, fg_color="#607D8B",width=260, height=210,text_color="black").place(x=650, y=390)
+opcional= customtkinter.CTkTextbox(frame_cadastrar_animal,width=260,height=215,fg_color="white").place(x=640,y=370)
+
+botao_enviar_cadastro_animal = customtkinter.CTkButton(frame_cadastrar_animal,text="Enviar",fg_color="#FFDA8F",text_color="black",font=("Times", 30),width=270,height=75,corner_radius=45,border_width=3,border_color="black",command=botao_continuar_cadastrar_animal)
+botao_enviar_cadastro_animal.place(x=900, y=620)
+
 tela.mainloop()
