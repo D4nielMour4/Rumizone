@@ -23,8 +23,8 @@ telacadfunci.title("Cadastro de funcionários")
 
 frame_inicio = customtkinter.CTkFrame(telacadfunci, fg_color="#CFD8DC")
 
-iconevaca1 = customtkinter.CTkImage(light_image=Image.open(r"imagens\ícone rumizone.png"),
-                                   dark_image=Image.open(r"imagens\ícone rumizone.png"), size=(292, 480))
+iconevaca1 = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
+                                   dark_image=Image.open(r"imagens\rumizone icone.png"), size=(292, 480))
 label_icone = customtkinter.CTkLabel(master=telacadfunci, text="", image=iconevaca1)
 label_icone.place(x=5, y=5)
 
@@ -50,7 +50,5 @@ emailfuncionario.place(x=20, y=430)
 telefonefuncionario = customtkinter.CTkEntry(telacadfunci, placeholder_text="Diga número de celular.",
                                              text_color="black", fg_color="#8690AF", width=280, height=60, font=("Helvetica", 20))
 telefonefuncionario.place(x=20, y=500)
-
-
 
 telacadfunci.mainloop()

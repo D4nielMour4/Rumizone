@@ -1,5 +1,6 @@
 import customtkinter  # Importa o módulo customtkinter
 from tkinter import *  # Importa o módulo tkinter
+from PIL import Image  # Importa o módulo Image do PIL
 
 #Iniciando a tela e os frames Principais
 tela = customtkinter.CTk()  # Cria a tela
@@ -168,5 +169,6 @@ button_hitorico_doenca.place(x=65, y=250)
 
 button_producao = customtkinter.CTkButton(texto_info, text="Produção", fg_color="#FF9EB1", command=producao_button, border_width=1, corner_radius=100, width=50, height=50)
 button_producao.place(x=95, y=310)
+
 
 tela.mainloop()  # Inicia a tela
