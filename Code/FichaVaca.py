@@ -100,7 +100,7 @@ def historico_doenca_button():
     historico_doenca_toplevel.title("Histórico de doenças")
     historico_doenca_toplevel.focus_force()
     historico_doenca_toplevel.grab_set()
-    historico_doenca_toplevel.transient(tela)
+    historico_doenca_toplevel.transient(frame_principal)
     texto_historico_doenca_toplevel = customtkinter.CTkLabel(historico_doenca_toplevel, text="Histórico de doenças", text_color="#607D8B", font=("Helvetica", 49)).place(x=25, y=10)
 
     text_nome_doenca = customtkinter.CTkLabel(historico_doenca_toplevel, text="Nome da doença", text_color="#607D8B", font=("Helvetica", 20)).place(x=10, y=100)

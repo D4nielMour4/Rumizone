@@ -14,9 +14,9 @@ img_botao_voltar = customtkinter.CTkImage(light_image=Image.open(r"imagens\botao
                                         dark_image=Image.open(r"imagens\botao voltar.png"),
                                         size=(50,50))
 
-iconevaca = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
+icone_vaca_home = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
                                    dark_image=Image.open(r"imagens\rumizone icone.png"),
-                                   size=(250,320))
+                                   size=(300,320))
 
 img_vaquinha = customtkinter.CTkImage(light_image=Image.open(r"imagens\vaquinha.png"), 
                                         dark_image=Image.open(r"imagens\vaquinha.png"),
@@ -30,6 +30,9 @@ img_fazendeiro = customtkinter.CTkImage(light_image=Image.open(r"imagens\fazende
                                     dark_image=Image.open(r"imagens\fazendeiro.png"),
                                     size=(150, 90))
 
+icone_vaca_login = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
+                                   dark_image=Image.open(r"imagens\rumizone icone.png"),
+                                   size=(150,158))
 #Declarando Funcoes de Botao da tela Home
 
 def janela_login():
@@ -44,20 +47,22 @@ def janela_registro():
 frame_home = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
 frame_home.pack()
 
-label_icone = customtkinter.CTkLabel(master=tela, text="", image=iconevaca)
-label_icone.place(x=530, y=5)
+label_icone = customtkinter.CTkLabel(master=tela, text="", image=icone_vaca_home)
+label_icone.place(x=510, y=30)
 
 titulo_rumizone_home = customtkinter.CTkLabel(tela, text="Rumizone", text_color="#607D8B", font=("Robot", 49))
-titulo_rumizone_home.place(x=550, y=250)
+titulo_rumizone_home.place(x=560, y=300)
 
-subtitulo_rumizone_home = customtkinter.CTkLabel(tela, text="Monitoramento e comportamento animal", text_color="#607D8B", font=("Helvetica", 20))
-subtitulo_rumizone_home.place(x=480, y=310)
+subtitulo_rumizone_home = customtkinter.CTkLabel(tela, text="Monitoramento e comportamento animal", text_color="#607D8B", font=("times", 20))
+subtitulo_rumizone_home.place(x=480, y=360)
 
-botao_login_home = customtkinter.CTkButton(tela, text="Login", font=("Helvetica",40), command=janela_login, fg_color="#8690AF",text_color="white", width=370, height=70, corner_radius=200)
-botao_login_home.place(x=480, y=350)
+botao_login_home = customtkinter.CTkButton(tela, text="Login",font=("Times",40),corner_radius=45,border_width=3,border_color="black",command=janela_login,fg_color="#8690AF",text_color="white",width=570, height=90)
 
-botao_registro_home = customtkinter.CTkButton(tela, text="Registre-se", font=("Helvetica",40), command=janela_registro, fg_color="#8690AF",text_color="white", width=370, height=70, corner_radius=200)
-botao_registro_home.place(x=480, y=440)
+botao_login_home.place(x=380, y=420)
+
+botao_registro_home = customtkinter.CTkButton(tela,
+text="Registre-se", font=("Times",40),command=janela_registro,corner_radius=45,border_width=3,border_color="black",fg_color="#8690AF",text_color="white",width=570, height=90)
+botao_registro_home.place(x=380, y=520)
 #----------------------------------------------
 #Declarando Funcoes de Botao da tela Login
 
@@ -72,19 +77,51 @@ def Continuar_login_to_principal():
 #Criando Frames Login
 frame_login = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
 
-texto_login = customtkinter.CTkLabel(frame_login, text="Fazer login", text_color="#607D8B", font=("Helvetica", 70))
-texto_login.place(x=510, y=180)
+logo_login = customtkinter.CTkLabel(frame_login, text=None, image=icone_vaca_login).place(x=600,y=60)
 
-entrada_email_login = customtkinter.CTkEntry(frame_login, placeholder_text="Digite seu usuário", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20))
+texto_login = customtkinter.CTkLabel(frame_login, text="Fazer login", text_color="#607D8B", font=("times", 45))
+texto_login.place(x=570, y=200)
+
+entrada_email_login = customtkinter.CTkEntry(frame_login, 
+                               placeholder_text="Digite seu usuário",
+                               placeholder_text_color="black",
+                               border_color="black",
+                                border_width=3,
+                                text_color="black", fg_color="#FFDA8F",
+                                corner_radius=45,
+                                width=370, height=55, font=("Times",20))
 entrada_email_login.place(x=500, y=280)
 
-entrada_senha_login = customtkinter.CTkEntry(frame_login, placeholder_text="Digite sua senha", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",20), show="*")
+entrada_senha_login = customtkinter.CTkEntry(frame_login,
+                                placeholder_text="Digite sua senha",
+                                placeholder_text_color="black",
+                                border_color="black",
+                                border_width=3,
+                                  text_color="black", fg_color="#FFDA8F",
+                                    width=370, height=55,
+                                    corner_radius=45,
+                                      font=("Times",20),
+                                        show="*")
 entrada_senha_login.place(x=500, y=350)
 
-botao_login = customtkinter.CTkButton(frame_login, text="Entrar", fg_color="#8690AF", text_color="white", command=Continuar_login_to_principal)
-botao_login.place(x=730, y=400)
-botao_voltar_login = customtkinter.CTkButton(frame_login, text="Voltar",fg_color="#8690AF", command=volta__login_to_home)
-botao_voltar_login.place(x=500, y=400)#Botão com função de voltar pra tela inicial
+botao_login = customtkinter.CTkButtonbotao_login = customtkinter.CTkButton(frame_login,
+                                      border_width=2,
+                                     border_color="black",
+                                      corner_radius=45,
+                                       text="Entrar",
+                                     fg_color="#FF9EB1",
+                                      text_color="black",
+                                     command=Continuar_login_to_principal,)
+botao_login.place(x=730, y=450)
+
+botao_voltar_login = customtkinter.CTkButton(frame_login,
+                                             border_width=2,
+                                             border_color="black",
+                                              text="Voltar",
+                                              fg_color="#FF9EB1",
+                                              corner_radius=45,
+                                              text_color="black",command=volta__login_to_home)
+botao_voltar_login.place(x=500, y=450)
 
 #----------------------------------------------
 #Declarando Funcoes de Botao da tela Registro
@@ -100,56 +137,127 @@ def abre_arquivo():
 #Criando Frames Registro
 frame_registro = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
 
-label_icone_registro = customtkinter.CTkLabel(master=frame_registro, text="", image=iconevaca)
+label_icone_registro = customtkinter.CTkLabel(master=frame_registro, text="", image=icone_vaca_home)
 label_icone_registro.place(x=50, y=2)
 
 botao_continuar_registo = customtkinter.CTkButton(frame_registro, text="Continuar", fg_color="#FFDA8F", text_color="black", command="")
 botao_continuar_registo.place(x=1150, y=650)
 
-botao_voltar_registro = customtkinter.CTkButton(frame_registro, corner_radius=200, text="", fg_color="#FF9EB1", text_color="black", command=volta_registro_to_home, image=img_botao_voltar)
+botao_voltar_registro = customtkinter.CTkButton(frame_registro,
+                        text= None,
+                        fg_color="#FF9EB1",
+                        width=80,
+                        height=60,
+                        corner_radius=45,
+                        border_width=3,
+                        border_color="black",
+                        image=img_botao_voltar,
+                        command=volta_registro_to_home)
 botao_voltar_registro.place(x=60, y=650)#Botão com função de voltar pra tela inicial
 
-entradra_nome_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Nome", text_color="black", fg_color="#FFDA8F", width=370, height=35, font=("Helvetica",40), corner_radius=200)
+entradra_nome_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Nome", text_color="black", fg_color="#FFDA8F", width=370, height=35, font=("times",40), corner_radius=200)
 entradra_nome_registro.place(x=320, y=100)
 
-entrada_idade_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Idade", text_color="black", fg_color="#FF9EB1", width=370, height=35, font=("Helvetica",40), corner_radius=200)
+entrada_idade_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Idade", text_color="black", fg_color="#FF9EB1", width=370, height=35, font=("times",40), corner_radius=200)
 entrada_idade_registro.place(x=60, y=250)
 
-entrada_profissao_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Profissão", text_color="black", fg_color="#FFDA8F", width=370, height=35, font=("Helvetica",40), corner_radius=200)
+entrada_profissao_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Profissão", text_color="black", fg_color="#FFDA8F", width=370, height=35, font=("times",40), corner_radius=200)
 entrada_profissao_registro.place(x=60, y=350)
 
-entrada_celular_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Celular", text_color="black", fg_color="#FF9EB1", width=370, height=35, font=("Helvetica",40), corner_radius=200)
+entrada_celular_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Celular", text_color="black", fg_color="#FF9EB1", width=370, height=35, font=("times",40), corner_radius=200)
 entrada_celular_registro.place(x=60, y=450)
 
-entrada_email_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Email", text_color="black", fg_color="#FFDA8F", width=370, height=35, font=("Helvetica",40), corner_radius=200)
+entrada_email_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Email", text_color="black", fg_color="#FFDA8F", width=370, height=35, font=("times",40), corner_radius=200)
 entrada_email_registro.place(x=60, y=550)
 
-entrada_comentarios_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Comentários", text_color="black", fg_color="white", width=370, height=35, font=("Helvetica",40), corner_radius=200)
-entrada_comentarios_registro.place(x=500, y=500)
+entrada_comentarios_registro = customtkinter.CTkTextbox(frame_registro, fg_color="#607D8B",width=500, height=390).place(x=550, y=260)
+opcional= customtkinter.CTkTextbox(frame_registro,width=500,height=395,fg_color="white").place(x=540,y=240)
 
+botao_arquivo_registro = customtkinter.CTkButton(frame_registro, command=abre_arquivo, text="", fg_color="#607D8B", width=150, height=150, corner_radius=200)
+botao_arquivo_registro.place(x=825, y=70)
 #----------------------------------------------
 
 #Declarando Funcoes de Botao da tela principal
 
+def botao_voltar_principal():
+    frame_principal.pack_forget()
+    frame_login.pack(fill="both", expand=True)
+
+
+def botao_cadastrar_animal():
+    frame_principal.pack_forget()
+    frame_cadastrar_animal.pack(fill="both", expand=True)
+
+def botao_acessar_curral():
+    frame_principal.pack_forget()
+    frame_acessar_curral.pack(fill="both", expand=True)
+
+def botao_acessar_perfil():
+    frame_principal.pack_forget()
+    frame_perfil.pack(fill="both", expand=True)
 
 #Criando Frames Principal
 frame_principal = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
 
-botao_voltar_principal = customtkinter.CTkButton(frame_principal, corner_radius=200, text="", fg_color="#FF9EB1", text_color="black", command=volta_registro_to_home, image=img_botao_voltar)
-botao_voltar_principal.place(x=60, y=650)
+Toplevel_verificar_saida = customtkinter.CTkToplevel(frame_principal, fg_color="#CFD8DC")
+Toplevel_verificar_saida.destroy()
 
-iconevaca_principal = customtkinter.CTkLabel(master=frame_principal, text="", image=iconevaca)
-iconevaca_principal.place(x=530, y=0)
+icon_vaca_principal = customtkinter.CTkLabel(master=frame_principal, text="", image=icone_vaca_home)
+icon_vaca_principal.pack()
 
-botao_perfil_principal = customtkinter.CTkButton(frame_principal, text="", fg_color="#FFDA8F", text_color="black", command="", width=200, height=200, image=img_fazendeiro)
-botao_perfil_principal.place(x=300, y=300)
+titulo_rumizone_principal= customtkinter.CTkLabel(frame_principal,fg_color="transparent",text="RUMIZONE",font=("Times", 64),width=660,height=108,text_color="#607D8B")
+titulo_rumizone_principal.place(x=350,y=250)
 
-botao_curral_principal = customtkinter.CTkButton(frame_principal, text="", fg_color="#FF9EB1", text_color="black", command="", width=200, height=200, image=img_cerca)
-botao_curral_principal.place(x=560, y=300)
+botao_cadastrar_animal= customtkinter.CTkButton(frame_principal, 
+                  text="cadastrar\n animal",
+                  text_color="black",
+                  font=("Times", 20),
+                  fg_color="#8690AF",
+                  width=300,
+                  height=180,
+                  corner_radius= 45,
+                  border_width=3,
+                  border_color="black",
+                  image= img_vaquinha)
+botao_cadastrar_animal.place(x=140, y=400)
 
-botao_cadastrar_animal_principal = customtkinter.CTkButton(frame_principal, text="", fg_color="#8690AF", text_color="black", command="", width=200, height=200, image=img_vaquinha)
-botao_cadastrar_animal_principal.place(x=820, y=300)
+botao_acessar_curral= customtkinter.CTkButton(frame_principal, 
+                  text="Entrar no curral",
+                  text_color="black",
+                  font=("Times", 20),
+                  fg_color="#FF9EB1",
+                  width=300,
+                  height=180,
+                  corner_radius= 45,
+                  border_width=3,
+                  border_color="black",
+                  image= img_cerca)
+botao_acessar_curral.place(x=550, y=400)
 
+botao_acessar_perfil= customtkinter.CTkButton(frame_principal, 
+                  text="Ir para o Perfil",
+                  text_color="black",
+                  font=("Times", 20),
+                  fg_color="#FFDA8F",
+                  width=300,
+                  height=180,
+                  corner_radius= 45,
+                  border_width=3,
+                  border_color="black",
+                  image= img_fazendeiro)
+botao_acessar_perfil.place(x=960, y=400)
+
+botao_voltar = customtkinter.CTkButton(frame_principal,
+                        text= None,
+                        fg_color="#FF9EB1",
+                        width=60,
+                        height=40,
+                        corner_radius=45,
+                        border_width=3,
+                        border_color="black",
+                        image=img_botao_voltar,
+                        command=botao_voltar_principal)
+botao_voltar.place(x=60, y=620)
 
 #----------------------------------------------
 tela.mainloop()

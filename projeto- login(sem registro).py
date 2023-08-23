@@ -40,11 +40,11 @@ tela.title("Rumizone")
 
 frame_inicio = customtkinter.CTkFrame(tela, fg_color="#CFD8DC")
 frame_inicio.pack()
-iconevaca_login = customtkinter.CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\rumizone icone.png"),
-                                   dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\rumizone icone.png"),
+iconevaca_login = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
+                                   dark_image=Image.open(r"imagens\rumizone icone.png"),
                                    size=(150,158))
-iconevaca = customtkinter.CTkImage(light_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\rumizone icone.png"),
-                                   dark_image=Image.open(r"C:\Users\Seabroso\Documents\GitHub\Rumizone\imagens\rumizone icone.png"),
+iconevaca = customtkinter.CTkImage(light_image=Image.open(r"imagens\rumizone icone.png"),
+                                   dark_image=Image.open(r"imagens\rumizone icone.png"),
                                    size=(300,320))
 label_icone = customtkinter.CTkLabel(master=tela, text="", image=iconevaca)
 label_icone.place(x=510, y=30)

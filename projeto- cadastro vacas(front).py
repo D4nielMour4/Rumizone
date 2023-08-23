@@ -170,6 +170,6 @@ codvaca= CTkEntry(cadastro_vacas,
                   fg_color="#FF9EB1").place(x=805,y=40)
 
 fundo_opcional= CTkFrame(cadastro_vacas, fg_color="#607D8B",width=260, height=210).place(x=650, y=390)
-opcional= CTkTextbox(cadastro_vacas,width=260,
-                     height=215).place(x=640,y=370)
+opcional= CTkTextbox(cadastro_vacas,width=260,height=215).place(x=640,y=370)
+
 cadastro_vacas.mainloop()
