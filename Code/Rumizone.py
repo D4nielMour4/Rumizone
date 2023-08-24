@@ -50,6 +50,13 @@ img_genders = customtkinter.CTkImage(light_image=Image.open(r"imagens\genders.pn
                                     dark_image=Image.open(r"imagens\genders.png"),
                                     size=(60, 50))
 
+img_lixo = customtkinter.CTkImage(light_image=Image.open(r"imagens\lata de lixo.png"),
+                                    dark_image=Image.open(r"imagens\lata de lixo.png"),
+                                    size=(60, 60))
+
+img_vaquinha_lista = customtkinter.CTkImage(light_image=Image.open(r"imagens\vaquinha.png"),
+                                            dark_image=Image.open(r"imagens\vaquinha.png"),
+                                            size=(100, 70))
 
 #Declarando Funcoes de Botao da tela Home
 
@@ -233,7 +240,7 @@ titulo_rumizone_principal.place(x=350,y=250)
 botao_cadastrar_animal= customtkinter.CTkButton(frame_principal,text="cadastrar\n animal",text_color="black",font=("Times", 20),fg_color="#8690AF",width=300,height=180,corner_radius= 45,border_width=3,border_color="black",image= img_vaquinha,command=botao_cadastrar_animal)
 botao_cadastrar_animal.place(x=140, y=400)
 
-botao_acessar_curral= customtkinter.CTkButton(frame_principal,text="Entrar no curral",text_color="black",font=("Times", 20),fg_color="#FF9EB1",width=300,height=180,corner_radius= 45,border_width=3,border_color="black",image= img_cerca)
+botao_acessar_curral= customtkinter.CTkButton(frame_principal,text="Entrar no curral",text_color="black",font=("Times", 20),fg_color="#FF9EB1",width=300,height=180,corner_radius= 45,border_width=3,border_color="black",image= img_cerca,command=botao_acessar_curral)
 botao_acessar_curral.place(x=550, y=400)
 
 botao_acessar_perfil= customtkinter.CTkButton(frame_principal,text="Ir para o Perfil",text_color="black",font=("Times", 20),fg_color="#FFDA8F",width=300,height=180,corner_radius= 45,border_width=3,border_color="black",image= img_fazendeiro)
@@ -325,5 +332,126 @@ opcional= customtkinter.CTkTextbox(frame_cadastrar_animal,width=260,height=215,f
 
 botao_enviar_cadastro_animal = customtkinter.CTkButton(frame_cadastrar_animal,text="Enviar",fg_color="#FFDA8F",text_color="black",font=("Times", 30),width=270,height=75,corner_radius=45,border_width=3,border_color="black",command=botao_continuar_cadastrar_animal)
 botao_enviar_cadastro_animal.place(x=900, y=620)
+
+#----------------------------------------------
+
+#Declarando Funcoes de Botao da tela acessar curral
+
+def botao_voltar_acessar_curral():
+    frame_acessar_curral.pack_forget()
+    frame_principal.pack(fill="both", expand=True)
+
+def botao_continuar_acessar_curral():
+    frame_acessar_curral.pack_forget()
+    frame_principal.pack(fill="both", expand=True)
+
+#Criando Frames Acessar Curral
+
+frame_acessar_curral = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
+
+barra_lateral_curral = customtkinter.CTkFrame(frame_acessar_curral,fg_color="#607D8B",
+                width=430,
+                height=720)
+barra_lateral_curral.place(x=0,y=0)
+
+curral = customtkinter.CTkLabel(barra_lateral_curral,width=380,height=140,corner_radius=45,fg_color="#FF9EB1",text="CURRAL",text_color="black",font=("Times", 30),image=img_cerca,compound=LEFT).place(x=20,y=25)
+
+botao_voltar = customtkinter.CTkButton(barra_lateral_curral,
+                        text= None,
+                        fg_color="#FF9EB1",
+                        width=60,
+                        height=40,
+                        corner_radius=45,
+                        border_width=3,
+                        border_color="black",
+                        image=img_botao_voltar)
+botao_voltar.place(x=60, y=620)
+
+adicionar_vaca = customtkinter.CTkButton(barra_lateral_curral,
+                        fg_color="#FFDA8F",
+                        corner_radius=45,
+                        width=220,
+                        height=90,
+                        text="adicionar\nanimal",
+                        font=("Times", 20),
+                        image= img_vaquinha_lista,
+                        text_color="black",
+                        compound=LEFT,
+                        border_color="black",
+                        border_width=3).place(x=120, y=200)
+
+remover_vaca = customtkinter.CTkButton(barra_lateral_curral,
+                        fg_color="#FFDA8F",
+                        corner_radius=45,
+                        width=280,
+                        height=90,
+                        text="remover\nanimal",
+                        font=("Times", 20),
+                        image= img_lixo,
+                        text_color="black",
+                        compound=LEFT,
+                        border_color="black",
+                        border_width=3).place(x=120, y=300)
+
+icone_leite= customtkinter.CTkLabel(frame_acessar_curral,
+                      image=img_leite,
+                      text=None).place(x=1060,y=70)
+
+icone_carne= customtkinter.CTkLabel(frame_acessar_curral, 
+                      image=img_carne,
+                      text=None).place(x=1160, y=75)
+
+nome_vaca= customtkinter.CTkButton(frame_acessar_curral,
+                     text="Nome - #código",
+                     fg_color="#8690AF",
+                     font=("Times", 40),
+                     corner_radius=45,
+                     width=280,
+                     height=90,
+                     border_color="black",
+                     border_width=3).place(x=700,y=70)
+
+perfil_vaca= customtkinter.CTkButton(frame_acessar_curral,
+                       text=None,
+                       hover=DISABLED , 
+                      width=130,
+                      height=130,
+                      border_width=3,
+                      border_color="black",
+                      fg_color="#8690AF",
+                      corner_radius=200, ).place(x=500,y=45)
+
+#----------------------------------------------
+#Declarando Funcoes de Botao da tela perfil
+
+def botao_voltar_perfil():
+    frame_perfil.pack_forget()
+    frame_principal.pack(fill="both", expand=True)
+
+def botao_continuar_perfil():
+    frame_perfil.pack_forget()
+    frame_principal.pack(fill="both", expand=True)
+
+#Criando Frames Perfil
+
+frame_perfil = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
+
+
+
+
+#----------------------------------------------
+#Declarando Funcoes de Botao da tela perfil vaca
+
+def botao_voltar_perfil_vaca():
+    frame_perfil_vaca.pack_forget()
+    frame_acessar_curral.pack(fill="both", expand=True)
+
+
+#Criando Frames Perfil Vaca
+
+frame_perfil_vaca = customtkinter.CTkFrame(master=tela, fg_color="#CFD8DC")
+
+
+
 
 tela.mainloop()

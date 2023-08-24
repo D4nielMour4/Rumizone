@@ -108,56 +108,15 @@ sexo=  CTkLabel(cadastro_vacas, text=None,
                    image=genders).place(x=515, y=130)
 
 #entrys para as informações da vaquinha
-pelagem= CTkEntry(cadastro_vacas,
-                  corner_radius=45,
-                  placeholder_text="Pelagem:",
-                  placeholder_text_color="black",
-                  font=("Times", 30),
-                  width=270,
-                  height=75,
-                  border_width=3,
-                  border_color="black",
-                  fg_color="#8690AF").place(x=305,y=265)
-idade= CTkEntry(cadastro_vacas,
-                corner_radius=45,
-                  placeholder_text="Idade:",
-                  placeholder_text_color="black",
-                  font=("Times", 30),
-                  width=270,
-                  height=75,
-                  border_width=3,
-                  border_color="black",
-                  fg_color="#FF9EB1").place(x=305, y=395)
-peso= CTkEntry(cadastro_vacas,
-corner_radius=45,
-placeholder_text="Peso - Kg:",
-placeholder_text_color="black",
-font=("Times", 30),
-width=270,
-height=75,
-border_width=3,
-border_color="black",
-fg_color="#8690AF").place(x=305, y=520)
-produção= CTkEntry(cadastro_vacas,
-                   corner_radius=45,
-                  placeholder_text="Produção:",
-                  placeholder_text_color="black",
-                  font=("Times", 30),
-                  width=270,
-                  height=75,
-                  border_width=3,
-                  border_color="black",
-                  fg_color="#FFDA8F").place(x=645, y=265)
-nome= CTkEntry(cadastro_vacas,
-               corner_radius=45,
-                  placeholder_text="Nome:",
-                  placeholder_text_color="black",
-                  font=("Times", 30),
-                  width=270,
-                  height=75,
-                  border_width=3,
-                  border_color="black",
-                  fg_color="#FFDA8F").place(x=505, y=40)
+pelagem= CTkEntry(cadastro_vacas,corner_radius=45,placeholder_text="Pelagem:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#8690AF").place(x=305,y=265)
+
+idade= CTkEntry(cadastro_vacas,corner_radius=45,placeholder_text="Idade:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#FF9EB1").place(x=305, y=395)
+
+peso= CTkEntry(cadastro_vacas,corner_radius=45,placeholder_text="Peso - Kg:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#8690AF").place(x=305, y=520)
+
+produção= CTkEntry(cadastro_vacas,  corner_radius=45,placeholder_text="Produção:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#FFDA8F").place(x=645, y=265)
+
+nome= CTkEntry(cadastro_vacas,corner_radius=45,placeholder_text="Nome:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#FFDA8F").place(x=505, y=40)
 codvaca= CTkEntry(cadastro_vacas,
                   corner_radius=45,
                   placeholder_text="#Cód:",
