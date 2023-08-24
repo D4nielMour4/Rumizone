@@ -1,16 +1,20 @@
-import customtkinter
-from tkinter import *
-from PIL import Image, ImageTk
-from tkinter import filedialog
+import cv2 
 
-tela = customtkinter.CTk(fg_color="#CFD8DC")
-tela.geometry("1360x720")
-tela.resizable(False, False)
-tela.title("Rumizone")
+cap = cv2.VideoCapture("imagens\Video Vacas.mp4")
 
+# Verifica se o vídeo foi aberto com sucesso
+if cap.isOpened():
+    while True:
+        # Lê um quadro do vídeo
+        ret, frame = cap.read()
 
+        # Verifica se o quadro foi lido com sucesso
+        if ret:
+            # Mostra o quadro na tela
+            cv2.imshow("Vídeo", frame)
 
-button_redondo = customtkinter.CTkButton(tela, text="", fg_color="black", width=50, height=50, corner_radius=300)
-button_redondo.place(x=560, y=300)
-
-tela.mainloop()
+            # Aguarda o usuário pressionar uma tecla
+            cv2.waitKey(1)
+        else:
+            # O quadro não foi lido com sucesso
+            break

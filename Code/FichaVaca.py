@@ -26,7 +26,7 @@ def curral_button():
     curral_toplevel.title("Curral")
     curral_toplevel.focus_force()
     curral_toplevel.grab_set()
-    curral_toplevel.transient(tela)
+    
     texto_curral_toplevel = customtkinter.CTkLabel(curral_toplevel, text="Curral", text_color="#607D8B", font=("Helvetica", 49)).place(x=175, y=10)
 
     text_numero_curral = customtkinter.CTkLabel(curral_toplevel, text="Número do curral", text_color="#607D8B", font=("Helvetica", 20)).place(x=10, y=100)
@@ -45,7 +45,7 @@ def cuidadores_button():
     cuidadores_toplevel.title("Cuidadores")
     cuidadores_toplevel.focus_force()
     cuidadores_toplevel.grab_set()
-    cuidadores_toplevel.transient(tela)
+    
     texto_cuidadores_toplevel = customtkinter.CTkLabel(cuidadores_toplevel, text="Cuidadores", text_color="#607D8B", font=("Helvetica", 49)).place(x=100, y=10)
 
     text_nome_cuidador = customtkinter.CTkLabel(cuidadores_toplevel, text="Nome do cuidador", text_color="#607D8B", font=("Helvetica", 20)).place(x=10, y=100)
@@ -62,7 +62,7 @@ def alimentos_button():
     alimentos_toplevel.title("Alimentos")
     alimentos_toplevel.focus_force()
     alimentos_toplevel.grab_set()
-    alimentos_toplevel.transient(tela)
+    
     texto_alimentos_toplevel = customtkinter.CTkLabel(alimentos_toplevel, text="Alimentos", text_color="#607D8B", font=("Helvetica", 49)).place(x=100, y=10)
 
     text_nome_alimento = customtkinter.CTkLabel(alimentos_toplevel, text="Nome do alimento", text_color="#607D8B", font=("Helvetica", 20)).place(x=10, y=100)
@@ -81,7 +81,7 @@ def historico_vacina_button():
     historico_vacina_toplevel.title("Histórico de vacinação")
     historico_vacina_toplevel.focus_force()
     historico_vacina_toplevel.grab_set()
-    historico_vacina_toplevel.transient(tela)
+    
     texto_historico_vacina_toplevel = customtkinter.CTkLabel(historico_vacina_toplevel, text="Histórico de vacinação", text_color="#607D8B", font=("Helvetica", 49)).place(x=25, y=10)
 
     text_nome_vacina = customtkinter.CTkLabel(historico_vacina_toplevel, text="Nome da vacina", text_color="#607D8B", font=("Helvetica", 20)).place(x=10, y=100)
@@ -100,7 +100,7 @@ def historico_doenca_button():
     historico_doenca_toplevel.title("Histórico de doenças")
     historico_doenca_toplevel.focus_force()
     historico_doenca_toplevel.grab_set()
-    historico_doenca_toplevel.transient(frame_principal)
+    
     texto_historico_doenca_toplevel = customtkinter.CTkLabel(historico_doenca_toplevel, text="Histórico de doenças", text_color="#607D8B", font=("Helvetica", 49)).place(x=25, y=10)
 
     text_nome_doenca = customtkinter.CTkLabel(historico_doenca_toplevel, text="Nome da doença", text_color="#607D8B", font=("Helvetica", 20)).place(x=10, y=100)
@@ -119,7 +119,7 @@ def producao_button():
     producao_toplevel.title("Produção")
     producao_toplevel.focus_force()
     producao_toplevel.grab_set()
-    producao_toplevel.transient(tela)
+    
     texto_producao_toplevel = customtkinter.CTkLabel(producao_toplevel, text="Produção", text_color="#607D8B", font=("Helvetica", 49)).place(x=100, y=10)
 
     text_producao = customtkinter.CTkLabel(producao_toplevel, text="Produção", text_color="#607D8B", font=("Helvetica", 20)).place(x=10, y=100)
