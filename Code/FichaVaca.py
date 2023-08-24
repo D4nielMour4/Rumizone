@@ -146,8 +146,8 @@ leite= customtkinter.CTkImage(light_image=Image.open(r"imagens\caixa de leite.pn
 voltar= customtkinter.CTkImage(light_image=Image.open(r"imagens\voltar.png"),
                 dark_image=Image.open(r"imagens\voltar.png"),
                 size=(20, 20))
-img_vaca = customtkinter.CTkLabel(frame_info_vaca, width=250, height=250, fg_color="black", corner_radius=200, bg_color="#CFD8DC", text="")
-img_vaca.place(x=20, y=10)
+img_vaca = customtkinter.CTkLabel(frame_info_vaca, width=200, height=200, fg_color="black", corner_radius=200, bg_color="#CFD8DC", text="")
+img_vaca.place(x=60, y=20)
 
 texto_nome = customtkinter.CTkButton(frame_info_vaca, text="-Creusa-\n #3321", text_color="black", font=("Times", 24), width=400, height=100, fg_color="#8690AF", corner_radius=100, border_color="black", border_width=3, hover=DISABLED)
 texto_nome.place(x=330, y=20)
