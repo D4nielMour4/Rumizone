@@ -180,17 +180,9 @@ label_icone_registro.place(x=50, y=2)
 botao_continuar_registo = customtkinter.CTkButton(frame_registro, text="Continuar", fg_color="#FFDA8F", text_color="black", command=volta_registro_to_home)
 botao_continuar_registo.place(x=1150, y=650)
 
-botao_voltar_registro = customtkinter.CTkButton(frame_registro,
-                        text= None,
-                        fg_color="#FF9EB1",
-                        width=80,
-                        height=60,
-                        corner_radius=45,
-                        border_width=3,
-                        border_color="black",
-                        image=img_botao_voltar,
-                        command=volta_registro_to_home)
-botao_voltar_registro.place(x=60, y=650)#Botão com função de voltar pra tela inicial
+botao_voltar_registro = customtkinter.CTkButton(frame_registro,text= None,fg_color="#FF9EB1",width=80,height=60,corner_radius=45,border_width=3,
+border_color="black",image=img_botao_voltar,command=volta_registro_to_home)
+botao_voltar_registro.place(x=60, y=650)
 
 entradra_nome_registro = customtkinter.CTkEntry(frame_registro, placeholder_text="Nome", text_color="black", fg_color="#FFDA8F", width=370, height=35, font=("times",40), corner_radius=200)
 entradra_nome_registro.place(x=320, y=100)
@@ -317,8 +309,8 @@ img_leite_cadastro_animal.place(x=970, y=345)
 img_carne_cadastro_animal = customtkinter.CTkLabel(frame_cadastrar_animal, text="", image=img_carne)
 img_carne_cadastro_animal.place(x=970, y=470)
 
-img_sexo = customtkinter.CTkLabel(frame_cadastrar_animal, text="", image=img_genders)
-img_sexo.place(x=515, y=130)
+#img_sexo = customtkinter.CTkLabel(frame_cadastrar_animal, text="", image=img_genders)
+#img_sexo.place(x=515, y=130)
 
 entrada_pelagem_cadastro_animal = customtkinter.CTkEntry(frame_cadastrar_animal,corner_radius=45,placeholder_text="Pelagem:",placeholder_text_color="black",font=("Times", 30),width=270,height=75,border_width=3,border_color="black",fg_color="#8690AF").place(x=305,y=265)
 
